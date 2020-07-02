@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inews/Models/category.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:inews/Pages/article_page.dart';
 import 'package:inews/Src/news.dart';
 import 'package:inews/Src/data.dart';
 import 'package:inews/Models/article.dart';
@@ -43,18 +44,22 @@ class _HomePageState extends State<HomePage> {
             Text(
               'India',
               style: TextStyle(
-                  color: Colors.blueAccent, fontWeight: FontWeight.w800),
+                  color: Color(0xff128807),
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.2),
             ),
             Text(
               'News',
-              style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.w800),
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.2),
             ),
             SizedBox(
-              width: 5,
+              width: 4,
             ),
             Container(
-              height: 13,
+              height: 14,
               child: Image.asset('images/flag.png'),
             )
           ],
@@ -98,6 +103,7 @@ class _HomePageState extends State<HomePage> {
                           imageUrl: articles[index].urlToImage ?? "",
                           tittle: articles[index].tittle ?? "",
                           desc: articles[index].desc ?? "",
+                          url: articles[index].url ?? "",
                         ),
                       ),
                     )
@@ -115,46 +121,47 @@ class CategoryTiles extends StatelessWidget {
   CategoryTiles({this.imageUrl, this.categoryName});
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        margin: EdgeInsets.only(right: 16),
-        child: Stack(
-          children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: CachedNetworkImage(
-                width: 120,
-                height: 60,
-                fit: BoxFit.cover,
-                imageUrl: imageUrl,
-              ),
-            ),
-            Container(
-              alignment: Alignment.center,
+    return Container(
+      margin: EdgeInsets.only(right: 16),
+      child: Stack(
+        children: <Widget>[
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: CachedNetworkImage(
               width: 120,
               height: 60,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6),
-                color: Colors.black26,
-              ),
-              child: Text(
-                categoryName,
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-              ),
+              fit: BoxFit.cover,
+              imageUrl: imageUrl,
             ),
-          ],
-        ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            width: 120,
+            height: 60,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(6),
+              color: Colors.black26,
+            ),
+            child: Text(
+              categoryName,
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
 
 class NewsTitles extends StatelessWidget {
-  final String imageUrl, tittle, desc;
+  final String imageUrl, tittle, desc, url;
 
-  NewsTitles({@required this.imageUrl, @required this.tittle, this.desc});
+  NewsTitles(
+      {@required this.imageUrl,
+      @required this.tittle,
+      this.desc,
+      @required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -162,6 +169,7 @@ class NewsTitles extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 16),
       padding: EdgeInsets.only(top: 16),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           ClipRRect(
               borderRadius: BorderRadius.circular(8),
@@ -185,6 +193,26 @@ class NewsTitles extends StatelessWidget {
               color: Colors.black54,
             ),
           ),
+          SizedBox(
+            height: 4,
+          ),
+          Material(
+            child: RaisedButton.icon(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ArticleNews(
+                        imageUrl: url,
+                      ),
+                    ),
+                  );
+                },
+                icon: Icon(Icons.chrome_reader_mode),
+                label: Text('Read More')),
+          )
         ],
       ),
     );
