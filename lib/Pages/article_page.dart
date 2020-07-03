@@ -14,6 +14,7 @@ class ArticleNews extends StatefulWidget {
 class _ArticleNewsState extends State<ArticleNews> {
   final Completer<WebViewController> _completer =
       Completer<WebViewController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

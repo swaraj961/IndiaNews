@@ -4,14 +4,13 @@ class ArticleModel {
   String url;
   String urlToImage;
   String content;
-  // String publishedAt;
+  String publishedAt;
 
-  ArticleModel({
-    this.content,
-    this.desc,
-    this.tittle,
-    this.url,
-    this.urlToImage,
-    // this.publishedAt
-  });
+  ArticleModel(
+      {this.content,
+      this.desc,
+      this.tittle,
+      this.url,
+      this.urlToImage,
+      this.publishedAt});
 }
