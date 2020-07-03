@@ -139,20 +139,21 @@ class NewsTitles extends StatelessWidget {
           ),
           Material(
             child: RaisedButton.icon(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ArticleNews(
-                        imageUrl: url,
-                      ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ArticleNews(
+                      imageUrl: url,
                     ),
-                  );
-                },
-                icon: Icon(Icons.chrome_reader_mode),
-                label: Text('Read More')),
+                  ),
+                );
+              },
+              icon: Icon(Icons.chrome_reader_mode),
+              label: Text('Read More'),
+            ),
           )
         ],
       ),

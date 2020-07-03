@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:inews/Pages/HomePage.dart';
+import 'package:inews/Pages/Splash_Screen.dart';
 
 void main() => runApp(Myapp());
 
@@ -14,7 +14,7 @@ class _MyappState extends State<Myapp> {
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.white),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SplashPage(),
     );
   }
 }

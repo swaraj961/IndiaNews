@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inews/Models/category.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:inews/Pages/Splash_Screen.dart';
 import 'package:inews/Pages/article_page.dart';
 import 'package:inews/Pages/category_page.dart';
 import 'package:inews/Src/news.dart';
@@ -90,21 +91,28 @@ class _HomePageState extends State<HomePage> {
                                 categoryName: categories[index].categoryName,
                               )),
                     ),
-                    Opacity(
-                      opacity: .8,
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Top Headlines',
-                          style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 30,
-                              fontWeight: FontWeight.w700),
+
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SplashPage())),
+                      child: Opacity(
+                        opacity: .8,
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Top Headlines',
+                            style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 30,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          margin: EdgeInsets.only(top: 10),
+                          decoration: BoxDecoration(color: Color(0xffe0e0e0)),
+                          width: MediaQuery.of(context).size.width,
+                          height: 60,
                         ),
-                        margin: EdgeInsets.only(top: 10),
-                        decoration: BoxDecoration(color: Color(0xffe0e0e0)),
-                        width: MediaQuery.of(context).size.width,
-                        height: 60,
                       ),
                     ),
                     // !newsArticle Blogs
@@ -123,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                           url: articles[index].url ?? "",
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
