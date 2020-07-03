@@ -34,69 +34,15 @@ class _SplashPageState extends State<SplashPage> {
                   ],
                 ),
                 // color: ,
-                image: DecorationImage(image: AssetImage('images/news.png'))),
+                image: DecorationImage(image: AssetImage('images/splash.png'))),
           ),
-          // Image.asset(
-          //   'images/login-bg.png',
-          //   fit: BoxFit.fitHeight,
-          // ),
-
-          Positioned(
-            top: 60,
-            left: 120,
-            child: Text(
-              'Welcome',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 40,
-                fontWeight: FontWeight.w700,
-                fontFamily: 'ProductSans',
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 620,
-            left: 150,
-            child: Image.asset(
-              'images/flag.png',
-              fit: BoxFit.contain,
-              height: 80,
-              width: 100,
-            ),
-          ),
-
-          Positioned(
-            bottom: 400,
-            left: 100,
-            child: Center(
-              child: Text(
-                'IndiaNews',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 35,
-                  fontWeight: FontWeight.w700,
-                  fontFamily: 'ProductSans',
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 190,
-            bottom: 200,
-            child: Center(
-                child: CircularProgressIndicator(
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            margin: EdgeInsets.only(bottom: 100),
+            alignment: Alignment.bottomCenter,
+            child: CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-            )),
-          ),
-          Positioned(
-            left: 100,
-            bottom: 30,
-            child: Center(
-              child: Text(
-                'Developed by Swaraj with ❤ India',
-                style:
-                    TextStyle(color: Colors.white, fontFamily: 'ProductSans'),
-              ),
             ),
           )
         ],

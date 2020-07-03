@@ -92,27 +92,21 @@ class _HomePageState extends State<HomePage> {
                               )),
                     ),
 
-                    GestureDetector(
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SplashPage())),
-                      child: Opacity(
-                        opacity: .8,
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: Text(
-                            'Top Headlines',
-                            style: TextStyle(
-                                color: Colors.black87,
-                                fontSize: 30,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          margin: EdgeInsets.only(top: 10),
-                          decoration: BoxDecoration(color: Color(0xffe0e0e0)),
-                          width: MediaQuery.of(context).size.width,
-                          height: 60,
+                    Opacity(
+                      opacity: .8,
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Top Headlines',
+                          style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 30,
+                              fontWeight: FontWeight.w700),
                         ),
+                        margin: EdgeInsets.only(top: 10),
+                        decoration: BoxDecoration(color: Color(0xffe0e0e0)),
+                        width: MediaQuery.of(context).size.width,
+                        height: 60,
                       ),
                     ),
                     // !newsArticle Blogs
