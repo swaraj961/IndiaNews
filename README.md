@@ -20,5 +20,5 @@
  <img src="https://github.com/swaraj961/INews-App/blob/master/android/app/Demo/s4.jpg" width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/swaraj961/INews-App/blob/master/android/app/Demo/s5.jpg" width="30%">&nbsp;&nbsp;&nbsp;<img src="https://github.com/swaraj961/INews-App/blob/master/android/app/Demo/s6.jpg" width="30%">&nbsp;&nbsp;&nbsp;
  
 ## Download apk-
-- https://www.shorturl.at/BMQY0
+- https://www.shorturl.at/ftHX4
 
